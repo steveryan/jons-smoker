@@ -1,7 +1,6 @@
 class ControlsController < ApplicationController
   def overview
     @desired_led = REDISLABS.get("led")
-    @chart_data = REDISLABS.get("chart")
   end
 
   def chart
