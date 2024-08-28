@@ -6,7 +6,7 @@ export default class extends Controller {
   connect() {
     console.log("Controls controller connected");
     this.refreshFrame();
-    this.interval = setInterval(() => this.refreshFrame(), 5000);
+    this.interval = setInterval(() => this.refreshFrame(), 30000);
   }
 
   disconnect() {
