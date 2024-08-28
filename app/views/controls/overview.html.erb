@@ -1,0 +1,8 @@
+<%= turbo_frame_tag :current_status do %>
+  <%= render 'controls/current_status', led: @desired_led%>
+<% end %>
+<%= turbo_frame_tag :control_down %>
+<%= turbo_frame_tag :control_up %>
+<%= turbo_frame_tag :chart,  data: { controller: "controls", interval: 5000 } do %>
+  <span><strong>Loading...</strong></span>
+<% end %>

@@ -1,0 +1,4 @@
+<%= turbo_frame_tag :chart,  data: { controller: "controls", interval: 5000 } do %>
+  <strong>Chart will go here:</strong>
+  <p><%= line_chart chart_data %></p>
+<% end %>
