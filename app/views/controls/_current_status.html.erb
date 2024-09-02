@@ -1,4 +1,7 @@
-<div class="container my-12">
-  <p class="flex justify-center"><strong class="">Status:</strong></p>
-  <p class="flex justify-center"><%= led %></p>
-</div>
+<%= turbo_frame_tag :current_status, data: { controller: "controls" } do %>
+  <div class="container my-12">
+    <p class="flex justify-center"><strong class="">Status:</strong></p>
+    <p class="flex justify-center">Desired: <%= @desired_led %></p>
+    <p class="flex justify-center">Actual: <%= @current_led %></p>
+  </div>
+<% end %>

@@ -1,6 +1,6 @@
 <%= turbo_frame_tag :chart,  data: { controller: "controls", interval: 5000 } do %>
   <div class="container">
     <p class="flex justify-center"><strong>Temperature over Time:</strong></p>
-    <p class="flex justify-center"><%= line_chart chart_data, points: false %></p>
+    <p class="flex justify-center"><%= line_chart controls_chart_data_url, refresh: 10 %></p>
   </div>
 <% end %>

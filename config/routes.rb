@@ -14,4 +14,6 @@ Rails.application.routes.draw do
   root "controls#overview"
 
   get "controls/chart" => "controls#chart"
+  get "controls/chart-data" => "controls#chart_data"
+  get "controls/status" => "controls#status"
 end
