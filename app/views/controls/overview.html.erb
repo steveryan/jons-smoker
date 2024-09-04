@@ -1,16 +1,16 @@
 <div class="container justify-center">
   <%= turbo_frame_tag :current_status, data: { controller: "controls" } do %>
-    <div class="container my-12">
-      <p class="flex justify-center"><strong class="">Status:</strong></p>
-      <p class="flex justify-center">Desired: <%= @desired_led %></p>
-      <p class="flex justify-center">Actual: <%= @current_led %></p>
+    <div class="container p-6 my-8 bg-white border border-gray-200 shadow-md rounded-lg">
+      <p class="flex justify-center text-center text-xl font-semibold mb-2"><strong class="">Status:</strong></p>
+      <p class="flex justify-center text-center text-lg">Desired: <%= @desired_led %></p>
+      <p class="flex justify-center text-center text-lg">Actual: <%= @current_led %></p>
     </div>
   <% end %>
 
   <%= turbo_frame_tag :chart do %>
-    <div class="container">
-      <p class="flex justify-center"><strong>Temperature over Time:</strong></p>
-      <p class="flex justify-center"><%= line_chart controls_chart_data_url, refresh: 10, points: false %></p>
+    <div class="container border border-gray-200 shadow-md rounded-lg p-6">
+      <p class="flex justify-center text-center text-xl font-semibold"><strong>Temperature over Time:</strong></p>
+      <p class="flex justify-center text-center text-xl font-semibold"><%= line_chart controls_chart_data_url, refresh: 10, points: false %></p>
     </div>
   <% end %>
 <div>
