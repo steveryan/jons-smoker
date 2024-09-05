@@ -20,7 +20,6 @@ class ControlsController < ApplicationController
   def chart_data
     @chart_data = REDISLABS.get("chart")
     @chart_data = @chart_data.split("~").map { |x| x.split(",") }.map { |x| [x[0], x[1].to_i] }
-    p @chart_data
     render json: @chart_data
   end
 
