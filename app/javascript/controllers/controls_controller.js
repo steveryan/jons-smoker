@@ -16,7 +16,7 @@ export default class extends Controller {
   refreshFrame() {
     console.log("Refreshing frame");
     const frame = document.getElementById("current_status");
-    if (frame) {
+    if (frame && !frame.contains(document.getElementById("form"))) {
       frame.src = "/controls/status";
     }
   }

@@ -16,4 +16,6 @@ Rails.application.routes.draw do
   get "controls/chart" => "controls#chart"
   get "controls/chart-data" => "controls#chart_data"
   get "controls/status" => "controls#status"
+  get "controls/edit" => "controls#edit_status", as: "edit_status"
+  patch 'controls/update', to: 'controls#update_status', as: 'update_status'
 end

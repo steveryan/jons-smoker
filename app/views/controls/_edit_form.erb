@@ -1,0 +1,18 @@
+<%= turbo_frame_tag :current_status do %>
+  <div class="container p-6 my-8 bg-white border border-gray-200 shadow-md rounded-lg" id="form">
+    <p class="text-center text-lg font-semibold mb-2"><strong>Status:</strong></p>
+    <p class="text-center text-lg font-semibold mb-2">Actual: <%= @current_led %></p>
+    <%= form_with url: update_status_path, method: :patch, local: true do |form| %>
+      <div class="mb-4">
+        <%= form.label :desired_led, "Desired Value:", class: "block text-gray-700" %>
+        <%= form.phone_field :desired_led, autofocus: true, value: nil, class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm" %>
+      </div>
+      <div class="flex justify-center">
+        <%= link_to controls_status_path do%>
+          <button class="bg-slate-200 px-4 py-2 rounded-md hover:bg-red-200 mx-1">Cancel</button>
+        <% end %>
+        <%= form.submit "Update", class: "bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 mx-1" %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

@@ -1,7 +1,9 @@
 <%= turbo_frame_tag :current_status, data: { controller: "controls" } do %>
   <div class="container p-6 my-8 bg-white border border-gray-200 shadow-md rounded-lg">
-    <p class="flex justify-center text-center text-xl font-semibold mb-2"><strong class="">Status:</strong></p>
-    <p class="flex justify-center text-center text-lg">Desired: <%= @desired_led %></p>
-    <p class="flex justify-center text-center text-lg">Actual: <%= @current_led %></p>
+    <%= link_to edit_status_path, data: { turbo_frame: 'current_status' }, class: "block text-center text-lg font-semibold mb-2 cursor-pointer" do %>
+      <p><strong>Status:</strong></p>
+      <p>Actual: <span class="font-medium"><%= @current_led %></span></p>
+      <p>Desired: <span class="font-medium"><%= @desired_led %></span></p>
+    <% end %>
   </div>
 <% end %>
