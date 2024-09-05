@@ -19,7 +19,8 @@ class ControlsController < ApplicationController
 
   def chart_data
     @chart_data = REDISLABS.get("chart")
-    @chart_data = @chart_data.split(" ").map { |x| x.split(",") }.map { |x| [x[0], x[1].to_i] }
+    @chart_data = @chart_data.split("~").map { |x| x.split(",") }.map { |x| [x[0], x[1].to_i] }
+    p @chart_data
     render json: @chart_data
   end
 
@@ -57,7 +58,7 @@ class ControlsController < ApplicationController
     end
     @desired_led = desired_led.value
     @current_led = current_led.value
-    
+
     respond_to do |format|
       format.html { redirect_to root_path, notice: "Status updated successfully" }
       format.turbo_stream { 
