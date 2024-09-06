@@ -59,3 +59,5 @@ group :test do
 end
 
 gem "tailwindcss-rails", "~> 2.7"
+
+gem "get_process_mem"

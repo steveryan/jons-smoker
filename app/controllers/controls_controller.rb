@@ -7,6 +7,10 @@ class ControlsController < ApplicationController
     end
     @desired_led = desired_led.value
     @current_led = current_led.value
+
+    # get currently used memory
+    mem = GetProcessMem.new
+    @memory_used = mem.mb
   end
 
   def chart
