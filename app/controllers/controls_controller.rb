@@ -12,7 +12,7 @@ class ControlsController < ApplicationController
   def chart
     @chart_data = REDISLABS.get("chart")
     @chart_data = @chart_data.split(" ").map { |x| x.split(",") }.map { |x| [x[0], x[1].to_i] }
-    
+    @chart_data = @chart_data.map { |x| [DateTime.parse(x[0]).strftime("%Y-%m-%d %H:%M"), x[1]] }
 
     render partial: "chart", locals: { chart_data: @chart_data }
   end
@@ -20,6 +20,7 @@ class ControlsController < ApplicationController
   def chart_data
     @chart_data = REDISLABS.get("chart")
     @chart_data = @chart_data.split("~").map { |x| x.split(",") }.map { |x| [x[0], x[1].to_i] }
+    @chart_data = @chart_data.map { |x| [DateTime.parse(x[0]).strftime("%Y-%m-%d %H:%M"), x[1]] }
     render json: @chart_data
   end
 
