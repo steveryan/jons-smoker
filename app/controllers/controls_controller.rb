@@ -52,6 +52,7 @@ class ControlsController < ApplicationController
   end
 
   def update_status
+    # TODO: Update this to check that the value is an integer between 0 and 250
     desired_led = params[:desired_led]
     REDISLABS.set("led", desired_led)
 
