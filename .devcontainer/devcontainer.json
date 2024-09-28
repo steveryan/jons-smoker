@@ -1,6 +1,9 @@
 {
   "image": "ghcr.io/rails/devcontainer/images/ruby:3.3.4",
   "features": {
-    "ghcr.io/rails/devcontainer/features/activestorage": {}
+    "ghcr.io/rails/devcontainer/features/activestorage": {},
+    "ghcr.io/itsmechlark/features/redis-server:1": {
+      "version": "latest"
+    }
   }
 }
