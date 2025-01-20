@@ -1,4 +1,4 @@
-Web/Mobile automation of a "dumb" electric smoker. 
+# Web/Mobile automation of a "dumb" electric smoker. 
 
 ![IMG_0964](https://github.com/user-attachments/assets/44492c67-3d28-4024-bda9-6c6f72b16978)
 
